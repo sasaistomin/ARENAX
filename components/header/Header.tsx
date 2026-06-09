@@ -22,8 +22,8 @@ function Header({ links, logo }: Props) {
                 </div>
             </div>
             <div>
-                <Link href={}></Link>
-                <Link href={}></Link>
+                <Link href={}>Вход</Link>
+                <Link href={}>Регистрация</Link>
             </div>
         </header>
     );
