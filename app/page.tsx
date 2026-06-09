@@ -1,65 +1,32 @@
-import Image from "next/image";
+import Header from "@/components/header/Header";
+
+const logo = `<svg width="67" height="13" viewBox="0 0 67 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.61612e-06 12.048L5.05601 0H5.15201L10.192 12.048H8.41601L4.64001 2.432L5.74401 1.712L1.52001 12.048H6.61612e-06ZM2.96001 7.664H7.26401L7.77601 9.008H2.51201L2.96001 7.664ZM15.4428 0.48C16.0294 0.48 16.5681 0.56 17.0588 0.72C17.5601 0.869334 17.9921 1.09867 18.3548 1.408C18.7281 1.70667 19.0161 2.08 19.2188 2.528C19.4321 2.96533 19.5388 3.47733 19.5388 4.064C19.5388 4.52267 19.4694 4.97067 19.3308 5.408C19.2028 5.84533 18.9841 6.24533 18.6748 6.608C18.3654 6.96 17.9601 7.248 17.4588 7.472C16.9681 7.68533 16.3601 7.792 15.6348 7.792H13.9228V12.048H12.3708V0.48H15.4428ZM15.6028 6.304C16.0614 6.304 16.4401 6.23467 16.7388 6.096C17.0481 5.95733 17.2881 5.78133 17.4588 5.568C17.6294 5.344 17.7521 5.104 17.8268 4.848C17.9014 4.592 17.9388 4.352 17.9388 4.128C17.9388 3.89333 17.8961 3.65333 17.8108 3.408C17.7361 3.152 17.6081 2.91733 17.4268 2.704C17.2561 2.49067 17.0268 2.31467 16.7388 2.176C16.4614 2.03733 16.1201 1.968 15.7148 1.968H13.9228V6.304H15.6028ZM17.5068 7.184L20.5308 12.048H18.7388L15.6668 7.232L17.5068 7.184ZM22.9176 0.48H30.4376V1.968H24.4696V5.488H29.7976V6.976H24.4696V10.56H30.6616V12.048H22.9176V0.48ZM43.3711 12.416L34.4271 3.344L34.8751 3.456L34.9071 12.048H33.3551V0.127999H33.4351L42.2831 9.232L41.9151 9.152L41.8831 0.48H43.4191V12.416H43.3711ZM45.5938 12.048L50.6498 0H50.7458L55.7858 12.048H54.0098L50.2338 2.432L51.3378 1.712L47.1138 12.048H45.5938ZM48.5538 7.664H52.8578L53.3698 9.008H48.1058L48.5538 7.664Z" fill="white"/>
+<path d="M57.0045 0.48H58.9725L66.5085 12.048H64.5245L57.0045 0.48ZM56.8445 12.048L60.8605 5.76L61.6125 7.264L58.7645 12.048H56.8445ZM61.6605 5.2L64.4765 0.48H66.3485L62.4925 6.496L61.6605 5.2Z" fill="#FFFF00"/></svg>`;
+
+const headerObject = {
+    'link1': {
+        'name': "Турниры",
+        'to': 'tyr'
+    },
+    'link2': {
+        'name': 'Команды',
+        'to': 'teame'
+    },
+    'link3': {
+        'name': 'Лидерборд',
+        'to': 'leaderboard'
+    },
+    'link4': {
+        'name': 'Трансляции',
+        'to': 'stream'
+    }
+}
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    return (
+        <div>
+            <Header logo={logo} links={headerObject} />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    );
 }
