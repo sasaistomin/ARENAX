@@ -1,0 +1,34 @@
+.liveNow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background-color: #1a1a12; /* Темный фон как на скрине */
+  border: 1px solid #4a4a22;  /* Рамка */
+  border-radius: 6px;
+  color: #c9d023;            /* Желто-зеленый цвет текста */
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 78px;
+}
+
+.box {
+  width: 8px;
+  height: 8px;
+  background-color: #bad843; /* Цвет точки */
+  border-radius: 50%;
+  
+  /* Подключаем анимацию: название, длительность (2с), бесконечно (infinite) */
+  animation: blink 2s infinite ease-in-out;
+}
+
+/* Описываем саму анимацию */
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.2; /* В начале и конце цикла точка полупрозрачная */
+  }
+  50% {
+    opacity: 1;   /* В середине цикла — максимальная яркость */
+  }
+}
